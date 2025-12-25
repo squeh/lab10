@@ -1,14 +1,20 @@
-# НЕ ДОДЕЛАНО
-
-cost = []
+total = 0
 
 while True:
-    cosst = int(input("Введите цену товара: ")).append()
-    if cosst < 0:
-        print("Ошибка цены.")
-        continue
-    elif cost > 1000:
-        cost %= 0.1
-    elif cosst == 0:
-        print(f"Сумма товаров: {cost}")
+    price = int(input("Введите цену товара: "))
+
+    if price == 0:
         break
+
+    if price < 0:
+        print("Ошибка цены")
+        continue
+
+    total += price
+
+if total > 1000:
+    discount = total * 0.1
+    total -= discount
+    print(f"Применена скидка 10%: {int(discount)} руб.")
+
+print(f"Итоговая сумма к оплате: {int(total)} руб.")
